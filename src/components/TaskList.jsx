@@ -1,10 +1,16 @@
 import TaskItem from "./TaskItem";
 
-function TaskList({ tasks }) {
+function TaskList({ tasks, deleteTask, toggleTaskStatus, handleEditTask }) {
   return (
-    <div>
+    <div className="space-y-4">
       {tasks.map((task) => (
-        <TaskItem key={task.id} task={task} />
+        <TaskItem
+          key={task.id}
+          task={task}
+          deleteTask={deleteTask}
+          toggleTaskStatus={toggleTaskStatus}
+          handleEditTask={handleEditTask}
+        />
       ))}
     </div>
   );
